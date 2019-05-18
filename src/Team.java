@@ -1,5 +1,5 @@
 
-class Team {
+abstract class Team {
 	private String name;
 	private int played = 0;
 	private int won = 0;
