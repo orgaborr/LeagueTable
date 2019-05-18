@@ -5,4 +5,4 @@ A Udemy challenge to create a league table to practice Generic classes.
 - Only teams of the same sport can be added to the same league
 - Incompatible teams should result in a compile time error
 
-Compareable interface and Collections.sort() are recommended to use.
+Comparable interface and Collections.sort() are recommended to use.

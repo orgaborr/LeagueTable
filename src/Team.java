@@ -1,5 +1,5 @@
 
-abstract class Team {
+abstract class Team implements Comparable<Team> {
 	private String name;
 	private int played = 0;
 	private int won = 0;
@@ -8,6 +8,20 @@ abstract class Team {
 	
 	public Team(String name) {
 		this.name = name;
+	}
+	
+	@Override
+	public int compareTo(Team o) {
+		if(countScore() < o.countScore()) {
+			return 1;
+		} else if(countScore() > o.countScore()) {
+			return -1;
+		}
+		return 0;
+	}
+
+	public int countScore() {
+		return (won*2 + tied);
 	}
 	
 	public void setPlayed(int played) {

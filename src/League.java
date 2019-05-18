@@ -1,10 +1,12 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class League<T extends Team> {
-	ArrayList<T> league = new ArrayList<>();
+	private String name;
+	private ArrayList<T> league = new ArrayList<>();
 
-	public League() {
-		super();
+	public League(String name) {
+		this.name = name;
 	}
 
 	public boolean addTeam(T team) {
@@ -44,7 +46,19 @@ public class League<T extends Team> {
 		}
 		System.out.println("Teams are not in the league");
 		return false;
-		
+	}
+	
+	public void printRankTable() {
+		Collections.sort(league);
+		for(int i=0; i<league.size(); i++) {
+			System.out.println((i+1) + ". " + league.get(i).getName() + ", score: " + league.get(i).countScore());
+		}
+	}
+	
+	
+	
+	public String getName() {
+		return name;
 	}
 	
 }
